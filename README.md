@@ -1,8 +1,18 @@
-# Getting Started with Create React App
+# Todo List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+Welcome to the Todo List App! This application helps you keep track of your tasks and stay organized.
+
+## Table of Contents
+1-Features
+2-Getting Started
+2-1-Installation
+2-2Usage
+3-Technologies Used
+4-Contributing
+5-License
+
 
 In the project directory, you can run:
 
