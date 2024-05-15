@@ -98,7 +98,7 @@ function App() {
                   <p> {text} </p>
                 </div>
 
-                <div>
+                <div className="icons-display">
                   <span>
                     <button
                       className="icon-hover"

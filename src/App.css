@@ -1,3 +1,4 @@
+
 /* -----------------first section------------------------- */
 
 .todo-container {
@@ -20,11 +21,15 @@
   border-radius: 10px;
   background-color: transparent;
   color: #9E78CF;
-  border: 1px solid #9E78CF;
+  border: #9E78CF solid 1px;
+
+
+
 }
 
 .todo-form button {
-  border: none;
+
+  border: 0px;
   background-color: #9E78CF;
   padding: 5px 13px;
   border-radius: 25%;
@@ -40,17 +45,19 @@
 }
 
 /* --------------second section ------------------ */
-
 .task-title {
   color: white;
-  margin: 15px 0 20px 10px;
+  margin-top: 15px;
+  margin-left: 10px;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .section-task {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background-color: #15101C;
   padding: 15px;
   margin-bottom: 20px;
@@ -58,17 +65,13 @@
 }
 
 span button {
-  border: none;
+  border: 0px;
   background-color: transparent;
 }
 
-.icon-hover i {
-  color: #9E78CF;
-  transition: all 0.5s;
-}
-
-.icon-hover:hover i {
-  color: #3E1671;
+.icon {
+  margin-right: 5px;
+  background-color: transparent;
 }
 
 .task-value {
@@ -76,7 +79,7 @@ span button {
 }
 
 .task-value p {
-  margin: 0;
+  margin: 0px;
 }
 
 .done {
@@ -84,35 +87,61 @@ span button {
   text-decoration-color: #78CFB0;
   color: #78CFB0;
 }
+.icons-display {
+  display: flex;
+}
+
+/* ------------------------------------- third section---------------------------------------- */
+.section-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.icon-hover:hover i {
+  color: #3E1671;
+}
+
+.icon-hover i {
+  color: #9E78CF;
+  transition: all 0.5s;
+}
+
+.todo-container p {
+  width: 250px;
+}
+
 
 /* media query */
-
 @media only screen and (max-width: 600px) {
   .todo-container {
     width: 80%;
     padding: 20px;
     margin: 20px auto; 
   }
-
+  
   .todo-form input {
     width: 80%;
   }
-
+  
   .todo-form button {
     padding: 5px 10px;
   }
-
+  
   .task-title {
     font-size: 18px;
   }
-
+  
   .section-task {
     padding: 10px;
     margin-bottom: 15px;
   }
-
+  
   .todo-container p {
-    width: 100%;
+    width: 200px;
+    overflow-wrap: break-word;
   }
 }
 
@@ -122,27 +151,28 @@ span button {
     padding: 30px;
     margin: 40px auto; 
   }
-
+  
   .todo-form input {
     width: 80%;
   }
-
+  
   .todo-form button {
     padding: 8px 15px;
     border-radius: 10px;
   }
-
+  
   .task-title {
     font-size: 22px;
   }
-
+  
   .section-task {
     padding: 20px;
     margin-bottom: 30px;
   }
-
+  
   .todo-container p {
-    width: 100%;
+    width: 240px;
+    overflow-wrap: break-word;
   }
 }
 
@@ -157,10 +187,21 @@ span button {
   .todo-container {
     width: 40%;
   }
+  .todo-container p {
+    width: 230px;
+    overflow-wrap: break-word;
+
+  }
 }
 
 @media only screen and (min-width: 1200px) {
   .todo-container {
     width: 30%;
   }
+  .todo-container p {
+    width: 200px;
+    
+    overflow-wrap: break-word;
+  }
+  
 }
