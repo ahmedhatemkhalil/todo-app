@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+/* -----------------first section------------------------- */
+
+.todo-container {
+  width: 30%;
+  padding: 45px;
+  margin: 40px auto;
+  background-color: #1D1825;
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.todo-form input {
+  width: 90%;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #9E78CF;
+  border: 1px solid #9E78CF;
+}
+
+.todo-form button {
+  border: none;
+  background-color: #9E78CF;
+  padding: 5px 13px;
+  border-radius: 25%;
+  transition: all 0.5s;
+}
+
+.todo-form button:hover {
+  background-color: #3E1671;
+}
+
+.text {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* --------------second section ------------------ */
+
+.task-title {
+  color: white;
+  margin: 15px 0 20px 10px;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.section-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #15101C;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+span button {
+  border: none;
+  background-color: transparent;
+}
+
+.icon-hover i {
+  color: #9E78CF;
+  transition: all 0.5s;
+}
+
+.icon-hover:hover i {
+  color: #3E1671;
+}
+
+.task-value {
+  color: #9E78CF;
+}
+
+.task-value p {
+  margin: 0;
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: #78CFB0;
+  color: #78CFB0;
+}
+
+/* media query */
+
+@media only screen and (max-width: 600px) {
+  .todo-container {
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto; 
   }
-  to {
-    transform: rotate(360deg);
+
+  .todo-form input {
+    width: 80%;
+  }
+
+  .todo-form button {
+    padding: 5px 10px;
+  }
+
+  .task-title {
+    font-size: 18px;
+  }
+
+  .section-task {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .todo-container p {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .todo-container {
+    width: 80%;
+    padding: 30px;
+    margin: 40px auto; 
+  }
+
+  .todo-form input {
+    width: 80%;
+  }
+
+  .todo-form button {
+    padding: 8px 15px;
+    border-radius: 10px;
+  }
+
+  .task-title {
+    font-size: 22px;
+  }
+
+  .section-task {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .todo-container p {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .todo-container {
+    width: 50%;
+    padding: 30px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .todo-container {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .todo-container {
+    width: 30%;
   }
 }
