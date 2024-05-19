@@ -1,3 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task-title {
+  @apply  text-white mt-3.75 ml-[10px] text-xl mb-20;
+}
+.section-task {
+  @apply flex justify-between	items-center bg-section-task p-3.75 mb-20 rounded-10
+}
+.btn {
+  @apply  border border-none bg-transparent items-center	p-0 mr-5
+}
+.done {
+  @apply line-through	decoration-done text-done
+}
+.todo-container {
+  @apply w-30 mx-auto my-10 p-45 rounded-[10px] bg-container
+}
+.todo-form {
+  @apply flex justify-center pt-2 pb-2 pl-0 pr-0
+}
 body {
   background-color: #0D0714;
 }
+
+

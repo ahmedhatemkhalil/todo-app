@@ -68,11 +68,22 @@ function App() {
   return (
     // -----------------------first section---------------------------
     <>
-      <h2 className=" text text-center mt-5"> Your Todo List </h2>
-      <div className="todo-container">
-        <div className="todo-form">
-          <input type="text" placeholder="Add a new task..." ref={inputRef} />
-          <button onClick={handleAddToDo}>
+      <h2 className=" text-white text-center mt-5 text-4xl ">
+        {" "}
+        Your Todo List{" "}
+      </h2>
+      <div className="todo-container ">
+        <div className=" todo-form">
+          <input
+            type="text"
+            placeholder="Add a new task..."
+            className="w-90 py-1.25 px-3.75 rounded-[10px] bg-transparent text-custom-purple border-1 border-custom-purple"
+            ref={inputRef}
+          />
+          <button
+            onClick={handleAddToDo}
+            className="border-0 ml-5 bg-custom-purple py-1.25 px-[13px] rounded-25 hover:bg-button-hover transition-all duration-500"
+          >
             <i className="fa-solid fa-plus fa-lg" style={{ color: "white" }} />
           </button>
         </div>
@@ -94,26 +105,20 @@ function App() {
           if (!completed) {
             return (
               <div className="section-task" key={id}>
-                <div className="task-value">
-                  <p> {text} </p>
+                <div className=" text-custom-purple">
+                  <p className="m-0	w-64 break-words"> {text} </p>
                 </div>
 
-                <div className="icons-display">
+                <div className=" flex">
                   <span>
-                    <button
-                      className="icon-hover"
-                      onClick={() => handleDoneToDo(id)}
-                    >
-                      <i className=" fa-solid fa-check fa-lg" />
+                    <button className=" btn" onClick={() => handleDoneToDo(id)}>
+                      <i className=" fa-solid fa-check fa-lg text-custom-purple  hover:text-button-hover transition-all duration-500" />
                     </button>
                   </span>
 
                   <span>
-                    <button
-                      className="icon-hover"
-                      onClick={() => handleDeleteToDo(id)}
-                    >
-                      <i className="fa-solid fa-trash fa-lg" />
+                    <button onClick={() => handleDeleteToDo(id)}>
+                      <i className="fa-solid fa-trash fa-lg  text-custom-purple  hover:text-button-hover transition-all duration-500" />
                     </button>
                   </span>
                 </div>
@@ -141,17 +146,20 @@ function App() {
           if (completed) {
             return (
               <div className="section-task " key={id}>
-                <div className="task-value">
-                  <p className={completed ? "done" : ""}> {text}</p>
+                <div className=" text-custom-purple">
+                  <p
+                    className={` ${
+                      completed ? "done" : ""
+                    } m-0 w-64 break-words	`}
+                  >
+                    {text}
+                  </p>{" "}
                 </div>
 
                 <div>
                   <span>
-                    <button
-                      className="icon-hover"
-                      onClick={() => handleDoneToDo(id)}
-                    >
-                      <i className=" fa-solid fa-arrow-left-long fa-lg" />
+                    <button className=" btn" onClick={() => handleDoneToDo(id)}>
+                      <i className="  text-custom-purple  fa-solid fa-arrow-left-long fa-lg hover:text-button-hover transition-all duration-500" />
                     </button>
                   </span>
                 </div>
