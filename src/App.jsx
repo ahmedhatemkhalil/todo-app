@@ -57,13 +57,14 @@ function App() {
         : element
     );
     setTodo(newTodo);
-    console.log(newTodo);
   };
 
   const handleDeleteToDo = (id) => {
     const newTodo = todo.filter((element) => element.id !== id);
     setTodo(newTodo);
   };
+  const tasksTodo = todo.filter(({ completed }) => !completed);
+  const tasksToDone = todo.filter(({ completed }) => completed);
 
   return (
     // -----------------------first section---------------------------
@@ -89,85 +90,59 @@ function App() {
         </div>
 
         {/* -----------------------------------second section------------------------------------------------------------ */}
-        {todo.filter((item) => {
-          return item.completed === false;
-        }).length !== 0 && (
-          <h3 className="task-title">
-            Tasks to do -{" "}
-            {
-              todo.filter((item) => {
-                return item.completed === false;
-              }).length
-            }{" "}
-          </h3>
+        {tasksTodo.length > 0 && (
+          <h3 className="task-title">Tasks to do - {tasksTodo.length}</h3>
         )}
-        {todo.map(({ completed, text, id }) => {
-          if (!completed) {
-            return (
-              <div className="section-task" key={id}>
-                <div className=" text-custom-purple">
-                  <p className="m-0	w-64 break-words"> {text} </p>
-                </div>
-
-                <div className=" flex">
-                  <span>
-                    <button className=" btn" onClick={() => handleDoneToDo(id)}>
-                      <i className=" fa-solid fa-check fa-lg text-custom-purple  hover:text-button-hover transition-all duration-500" />
-                    </button>
-                  </span>
-
-                  <span>
-                    <button onClick={() => handleDeleteToDo(id)}>
-                      <i className="fa-solid fa-trash fa-lg  text-custom-purple  hover:text-button-hover transition-all duration-500" />
-                    </button>
-                  </span>
-                </div>
+        <div className="tasks-todo">
+          {tasksTodo.map(({ text, id }) => (
+            <div className="section-task" key={id}>
+              <div className=" text-custom-purple">
+                <p className="m-0	w-64 break-words"> {text} </p>
               </div>
-            );
-          }
-          return undefined;
-        })}
+
+              <div className=" flex">
+                <span>
+                  <button className=" btn" onClick={() => handleDoneToDo(id)}>
+                    <i className=" fa-solid fa-check fa-lg text-custom-purple  hover:text-button-hover transition-all duration-500" />
+                  </button>
+                </span>
+
+                <span>
+                  <button onClick={() => handleDeleteToDo(id)}>
+                    <i className="fa-solid fa-trash fa-lg  text-custom-purple  hover:text-button-hover transition-all duration-500" />
+                  </button>
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* ----------------------third section----------------------- */}
-        {todo.filter(({ completed }) => {
-          return completed === true;
-        }).length !== 0 && (
-          <h3 className="task-title">
-            Done -{" "}
-            {
-              todo.filter(({ completed }) => {
-                return completed === true;
-              }).length
-            }{" "}
-          </h3>
+        {tasksToDone > 0 && (
+          <h3 className="task-title">Done - {tasksToDone.length}</h3>
         )}
-
-        {todo.map(({ completed, id, text }) => {
-          if (completed) {
-            return (
-              <div className="section-task " key={id}>
-                <div className=" text-custom-purple">
-                  <p
-                    className={` ${
-                      completed ? "done" : ""
-                    } m-0 w-64 break-words	`}
-                  >
-                    {text}
-                  </p>{" "}
-                </div>
-
-                <div>
-                  <span>
-                    <button className=" btn" onClick={() => handleDoneToDo(id)}>
-                      <i className="  text-custom-purple  fa-solid fa-arrow-left-long fa-lg hover:text-button-hover transition-all duration-500" />
-                    </button>
-                  </span>
-                </div>
+        <div className="tasks-done">
+          {tasksToDone.map(({ completed, id, text }) => (
+            <div className="section-task " key={id}>
+              <div className=" text-custom-purple">
+                <p
+                  className={` ${completed ? "done" : ""} m-0 w-64 break-words	`}
+                >
+                  {text}
+                </p>{" "}
               </div>
-            );
-          }
-          return undefined;
-        })}
+
+              <div>
+                <span>
+                  <button className=" btn" onClick={() => handleDoneToDo(id)}>
+                    <i className="  text-custom-purple  fa-solid fa-arrow-left-long fa-lg hover:text-button-hover transition-all duration-500" />
+                  </button>
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <Toaster />
       </div>
     </>
