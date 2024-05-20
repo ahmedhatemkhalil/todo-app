@@ -66,8 +66,8 @@ function App() {
   const tasksTodo = todo.filter(({ completed }) => !completed);
   const tasksToDone = todo.filter(({ completed }) => completed);
 
+  // -----------------------first section---------------------------
   return (
-    // -----------------------first section---------------------------
     <>
       <h2 className=" text-white text-center mt-5 text-4xl ">
         {" "}
@@ -118,7 +118,7 @@ function App() {
         </div>
 
         {/* ----------------------third section----------------------- */}
-        {tasksToDone > 0 && (
+        {tasksToDone.length > 0 && (
           <h3 className="task-title">Done - {tasksToDone.length}</h3>
         )}
         <div className="tasks-done">
